@@ -1,0 +1,152 @@
+:root {
+  color-scheme: none !important;
+  --primary-color: #00D1F5;
+  --primary-dark: #0099B8;
+  --primary-light: rgba(0, 209, 245, 0.1);
+  --primary-border: rgba(0, 209, 245, 0.2);
+  --bg-dark: rgb(15, 15, 15);
+  --bg-card: rgb(32, 32, 32);
+  --text-primary: #e6edf3;
+  --text-secondary: rgba(255, 255, 255, 0.5);
+  --border-color: rgba(0, 209, 245, 0.1);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 2px 4px rgba(0, 209, 245, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 209, 245, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 209, 245, 0.1);
+  --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  --gradient-dark: linear-gradient(180deg, rgba(13,17,23,0.95) 0%, rgba(13,17,23,0.85) 100%);
+}
+
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 8px;
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* PrimeVue Overrides */
+.p-button {
+  border-radius: 8px !important;
+  transition: var(--transition-smooth) !important;
+}
+
+.p-button:not(.p-button-text):hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.p-button:active {
+  transform: translateY(0);
+}
+
+.p-dialog {
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg) !important;
+  border: 1px solid var(--border-color) !important;
+  background: rgba(22, 27, 34, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+.p-menubar {
+  border-radius: 8px !important;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.p-tag {
+  border-radius: 6px !important;
+  padding: 6px 12px !important;
+  background: var(--primary-light) !important;
+  color: var(--primary-color) !important;
+  border: 1px solid var(--primary-border) !important;
+}
+
+.p-progressbar {
+  height: 8px !important;
+  border-radius: 4px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.p-progressbar-value {
+  background: var(--gradient-primary) !important;
+}
+
+.p-toast .p-toast-message {
+  backdrop-filter: blur(10px) !important;
+  border-radius: 12px !important;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Common Classes */
+.card-hover {
+  transition: var(--transition-smooth);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.animate-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
